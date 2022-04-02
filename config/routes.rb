@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :carts
   resources :plants
   
   get '/hello', to: 'application#hello_world'
