@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Plant.delete_all
+User.delete_all
+Cart.delete_all
+CartItem.delete_all
+
 plants = {
     'Snake Plant' => {
         :common_name => 'Snake Plant',
@@ -268,3 +273,8 @@ plants.each do |name, plant_hash|
     end
     p.save
 end
+
+User.create(name: "Corban", username: "Mr.React", password_digest: "guest")
+Cart.create(user_id: 1)
+CartItem.create(quantity: 2, plant_id: 3, cart_id: 1)
+CartItem.create(quantity: 3, plant_id: 10, cart_id:1)

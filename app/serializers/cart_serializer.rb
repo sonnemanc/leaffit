@@ -1,3 +1,5 @@
-class CartSerializer < ActiveModel::Serializer
-  attributes :id
+class CartSerializer
+  include FastJsonapi::ObjectSerializer
+  attributes :user_id
+  has_many :cart_items
 end

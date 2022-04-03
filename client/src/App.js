@@ -14,12 +14,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Switch>
-          <Route path="/testing">
-            <h1>Test Route</h1>
+          <Route path="/plants">
+            <h1>This page will display plants!</h1>
           </Route>
+
           <Route path="/">
-            <h1>Page Count: {count}</h1>
+            <h1>This will be the home page</h1>
           </Route>
+          
         </Switch>
       </div>
     </BrowserRouter>
