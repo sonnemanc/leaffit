@@ -17,6 +17,8 @@ class Api::V1::UsersController < ApplicationController
         if @user.save
             @new_cart = @user.cart.build(user_id: @user.id)
             @new_cart.save
+            byebug
+            
             render json: @user, status: :created, location: @user
         else
             render json: @user.errors, status: :unprocessable_entity

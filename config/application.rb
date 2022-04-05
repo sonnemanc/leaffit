@@ -37,7 +37,7 @@ module PlantStore
     config.api_only = true
 
     config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Session::CookieStore, key: '_cookie_name'
 
     config.action_dispatch.cookies_same_site_protection = :strict
   end
