@@ -275,6 +275,10 @@ plants.each do |name, plant_hash|
 end
 
 User.create(name: "Corban", username: "Mr.React", password_digest: "guest")
+User.create(name: "Sheba", username: "BestCat", password_digest: "password")
+User.create(name: "Bob", username: "Bigguy", password_digest: "password")
 Cart.create(user_id: 1)
+Cart.create(user_id:2)
+Cart.create(user_id:3)
 CartItem.create(quantity: 2, plant_id: 3, cart_id: 1)
 CartItem.create(quantity: 3, plant_id: 10, cart_id:1)

@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::API
   include ActionController::Cookies
+  wrap_parameters format: [:json]
 
 
     def current_user
-      #User.find_by(id: session[:user_id])     #currently a mocked version of 'being logged in'
-      User.first
+      @user = User.find_by(id: session[:user_id])
     end
 
     def logged_in?
