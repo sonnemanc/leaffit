@@ -274,9 +274,9 @@ plants.each do |name, plant_hash|
     p.save
 end
 
-User.create(name: "Corban", username: "Mr.React", password_digest: "guest")
-User.create(name: "Sheba", username: "BestCat", password_digest: "password")
-User.create(name: "Bob", username: "Bigguy", password_digest: "password")
+User.create(name: "Corban", username: "Mr.React", password: "guest")
+User.create(name: "Sheba", username: "BestCat", password: "password")
+User.create(name: "Bob", username: "Bigguy", password: "password")
 Cart.create(user_id: 1)
 Cart.create(user_id:2)
 Cart.create(user_id:3)
