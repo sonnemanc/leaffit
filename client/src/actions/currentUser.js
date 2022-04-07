@@ -6,6 +6,12 @@ export const setCurrentUser = user => {
     }
 }
 
+export const clearCurrentUser = () => {
+    return {
+        type: "CLEAR_CURRENT_USER"
+    }
+}
+
 
 //asychronous action creators
 
@@ -54,3 +60,15 @@ export const getCurrentUser = () => {
         .catch(console.log)
     }
 }
+
+//the code below clears the session on the backend
+export const logout = () => {
+    return (dispatch) => {
+        return fetch('http://localhost:3000/api/v1/logout', {
+            credentials: 'include',
+            method: 'DELETE'
+        })
+        .then(dispatch(clearCurrentUser()))
+    }
+}
+

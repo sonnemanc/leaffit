@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+/* everything below this is my code */
+
+.NavBar {
+  position: flex;
+  color: green;
+  flex-direction: row;
+}
