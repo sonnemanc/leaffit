@@ -13,7 +13,7 @@ class PlantList extends React.Component {
         return (
             <div>
                 <ul>
-                  {this.props.plants.data.map((plant, index) => (<li key={index}><ShowPlant props={plant} /></li>))}
+                  {this.props.plants.data && this.props.plants.data.map((plant, index) => (<li key={index}><ShowPlant props={plant} /></li>))}
                 </ul>
             </div>
         )
