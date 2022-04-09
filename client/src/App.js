@@ -20,6 +20,8 @@ class App extends React.Component {
     this.props.getPlants()
   }
 
+  //Need a component did update, when log in fails cart and plants don't fill?
+
   render() {
     return (
       <Router>

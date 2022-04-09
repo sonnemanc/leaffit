@@ -50,6 +50,7 @@ export const getCurrentUser = () => {
             },
         })
         .then(resp => resp.json())
+        .then(x => x.data)
         .then(user => {
             if (user.error) {
                 alert("Please Sign-up or Log-in")

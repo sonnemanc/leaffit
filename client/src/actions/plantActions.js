@@ -6,6 +6,7 @@ export const fillPlants = plants => {
 }
 
 
+
 export const getPlants = () => {
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/plants', {
@@ -15,6 +16,7 @@ export const getPlants = () => {
             },
         })
         .then(resp => resp.json())
+        .then(x => x.data)
         .then(plants => dispatch(fillPlants(plants)))
     }
 }

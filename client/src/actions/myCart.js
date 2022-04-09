@@ -11,6 +11,7 @@ export const emptyCart = cart => {
     }
 }
 
+
 export const getCart = () => {
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/users/1/carts/1', {
@@ -21,6 +22,7 @@ export const getCart = () => {
             },
         })
         .then(resp => resp.json())
+        .then(x => x.included)
         .then(cart => dispatch(setMyCart(cart)))
     }
 }
