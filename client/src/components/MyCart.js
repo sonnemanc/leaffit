@@ -16,6 +16,8 @@ class MyCart extends React.Component {
               <ul>
                   {this.props.cart.included && this.props.cart.included.map( (item, index) => (<li key={index}><CartItem props={item} /></li>))}
               </ul>
+              <button>CheckOut</button>
+              <button>Empty Cart</button>
              </div>
         )
     }

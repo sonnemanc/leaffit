@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { logout } from "../actions/currentUser.js"
+import { logout } from "../../actions/currentUser.js"
 
             // object destructuring to get props.loginForm
 const Logout = ({ logout }) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import ShowPlant from './ShowPlant.js'
-import { getPlants } from '../actions/plantActions.js'
+import { getPlants } from '../../actions/plantActions.js'
 
 class PlantList extends React.Component {
 

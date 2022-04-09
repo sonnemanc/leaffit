@@ -6,8 +6,10 @@ const CartItem = (item) => {
         <div className='CartItem'>
             <>This is an individual item in the cart!</>
             <ul>
-                <li>{search(item.props.attributes.plant_id, item.plants.data).attributes.common_name}</li>
+                <li>Fix plant name{//search(item.props.attributes.plant_id, item.plants.data).attributes.common_name
+                }</li>
                 <li>Quantity: {item.props.attributes.quantity}</li>
+                <button>Edit</button><button>Remove</button>
             </ul>
             
         </div>

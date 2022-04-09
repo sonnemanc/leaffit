@@ -9,6 +9,7 @@ const ShowPlant = (plant) => {
       <p>Water Needs: {plant.props.attributes.water_needs}</p>
       <p>{plant.props.attributes.description}</p>
       <p>{plant.props.attributes.special_notes}</p>
+      <button>Add To Cart</button>
     </div>
   )
 }
