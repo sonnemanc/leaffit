@@ -1,3 +1,4 @@
+
 // synchronous action creators
 export const setCurrentUser = user => {
     return {
@@ -69,6 +70,7 @@ export const logout = () => {
             method: 'DELETE'
         })
         .then(dispatch(clearCurrentUser()))
+        .then(dispatch())
     }
 }
 

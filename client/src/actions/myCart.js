@@ -5,6 +5,12 @@ export const setMyCart = cart => {
     }
 }
 
+export const emptyCart = cart => {
+    return {
+        type: "CLEAR_CART"
+    }
+}
+
 export const getCart = () => {
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/users/1/carts/1', {

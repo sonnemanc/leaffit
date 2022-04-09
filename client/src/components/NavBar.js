@@ -8,7 +8,7 @@ const NavBar = ({ currentUser }) => {
     return (
         <div className='NavBar'>
             <div className='Links'>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/home">Home</NavLink>
               <NavLink to="/plants">Our Plants</NavLink>
               <NavLink to="/cart">My Cart</NavLink>
               

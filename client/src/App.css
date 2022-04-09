@@ -73,3 +73,9 @@
   flex: 1;
   justify-content: 'space-between';
 }
+
+.welcome {
+  float: center;
+  color: green;
+  text-align: center;
+}
