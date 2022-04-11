@@ -43,7 +43,6 @@ export const addCartItem = data => {
     //console.log(itemData)
     console.log(`addCartItem is trying!`)
     return dispatch => {
-        debugger
         return fetch('http://localhost:3000/api/v1/cart_items', {
             credentials: 'include',
             method: "POST",

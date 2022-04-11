@@ -6,7 +6,7 @@ const ShowPlant = (plant, currentUser) => {
 
   const handleClick = (event) => {
     console.log(`I was Clicked`)
-    addCartItem(plant)  // this needs to work, right now it does nothing
+    plant.addCartItem(plant)
     }
 
 
@@ -30,5 +30,5 @@ const mapStateToProps = ({ currentUser }) => {
 }
 
 
-export default connect(mapStateToProps) (ShowPlant)
+export default connect(mapStateToProps, {addCartItem}) (ShowPlant)
 
