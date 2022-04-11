@@ -13,7 +13,7 @@ const NavBar = ({ currentUser }) => {
               <NavLink to="/cart">My Cart</NavLink>
               
               <div className='user_nav'>
-                  {currentUser ? `Welcome, ${currentUser.data.attributes.name}` : ``}
+                  {currentUser ? `Welcome, ${currentUser.attributes.name}` : ``}
                   {currentUser ? <Logout/> : <Login/>}
                   <button> Sign Up </button>
               </div>

@@ -4,11 +4,10 @@ import { connect } from 'react-redux'
 const CartItem = (item) => {
     return (
         <div className='CartItem'>
-            <>This is an individual item in the cart!</>
             <ul>
-                <li>Fix plant name{//search(item.props.attributes.plant_id, item.plants.data).attributes.common_name
-                }</li>
+                <li>{search(item.props.attributes.plant_id, item.plants).attributes.common_name}</li>
                 <li>Quantity: {item.props.attributes.quantity}</li>
+                <li>Price: 0</li>
                 <button>Edit</button><button>Remove</button>
             </ul>
             

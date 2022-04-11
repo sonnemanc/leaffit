@@ -6,7 +6,8 @@ export default (state = initialState, action) => {
         case "CLEAR_CART":
             return initialState
         case "ADD_PLANT":
-            //return state.concat(action.plant)
+            console.log(action.item)
+            return action.cart.attributes.concat(action.item)
         default:
             return state
     }

@@ -79,3 +79,16 @@
   color: green;
   text-align: center;
 }
+
+.light-zones {
+  width: auto;
+  margin: auto;
+}
+
+.colorized {
+  max-width: 50%;
+}
+
+ul {
+  list-style-type: none;
+}

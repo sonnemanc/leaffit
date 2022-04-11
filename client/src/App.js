@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { getCurrentUser } from './actions/currentUser.js'
 import { getPlants } from './actions/plantActions.js'
+import { getCart } from './actions/myCart.js'
 import Navbar from './components/NavBar.js'
 import Login from './components/user/Login.js'
 import Home from './components/Home.js'
@@ -18,6 +19,12 @@ class App extends React.Component {
   componentDidMount() {
     this.props.getCurrentUser()
     this.props.getPlants()
+    this.props.getCart()
+  }
+
+  componentDidUpdate() {
+    this.props.getCurrentUser()
+    this.props.getCart()
   }
 
   //Need a component did update, when log in fails cart and plants don't fill?
@@ -42,4 +49,4 @@ class App extends React.Component {
 
 
 
-export default connect(null, { getCurrentUser, getPlants }) (App);
+export default connect(null, { getCurrentUser, getPlants, getCart }) (App);

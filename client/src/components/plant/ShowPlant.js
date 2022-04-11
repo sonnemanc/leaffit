@@ -1,6 +1,15 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { addCartItem } from '../../actions/myCart.js'
 
-const ShowPlant = (plant) => {
+const ShowPlant = (plant, currentUser) => {
+
+  const handleClick = (event) => {
+    console.log(`I was Clicked`)
+    addCartItem(plant)  // this needs to work, right now it does nothing
+    }
+
+
   return (
     <div className='ShowPlant'>
       <h3>{plant.props.attributes.common_name}</h3>
@@ -9,10 +18,17 @@ const ShowPlant = (plant) => {
       <p>Water Needs: {plant.props.attributes.water_needs}</p>
       <p>{plant.props.attributes.description}</p>
       <p>{plant.props.attributes.special_notes}</p>
-      <button>Add To Cart</button>
+      <button onClick={function(e) {handleClick(plant, currentUser)}}>Add To Cart</button>
     </div>
   )
 }
 
-export default ShowPlant
+const mapStateToProps = ({ currentUser }) => {
+  return {
+    currentUser
+  }
+}
+
+
+export default connect(mapStateToProps) (ShowPlant)
 

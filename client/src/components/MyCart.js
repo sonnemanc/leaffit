@@ -14,8 +14,11 @@ class MyCart extends React.Component {
             <div className="MyCart">
               <>Inside My Cart</>
               <ul>
-                  {this.props.cart.included && this.props.cart.included.map( (item, index) => (<li key={index}><CartItem props={item} /></li>))}
+                  {this.props.cart && this.props.cart.map( (item, index) => (<li key={index}><CartItem props={item} /></li>))}
               </ul>
+              <p>Tax: </p>
+              <p>Shipping and Handling: </p>
+              <p>Total :</p>
               <button>CheckOut</button>
               <button>Empty Cart</button>
              </div>
