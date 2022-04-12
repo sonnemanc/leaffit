@@ -5,7 +5,7 @@ export const setMyCart = cart => {
     }
 }
 
-export const emptyCart = cart => {
+export const emptyCart = () => {
     return {
         type: "CLEAR_CART"
     }
@@ -16,6 +16,20 @@ export const addItem = item => {
         type: "ADD_PLANT",
         item
 
+    }
+}
+
+export const removeItem = item => {
+    return {
+        type: "REMOVE_ITEM",
+        item
+    }
+}
+
+export const updateItem = item => {
+    return {
+        type: "UPDATE_ITEM",
+        item
     }
 }
 
@@ -51,7 +65,22 @@ export const addCartItem = data => {
         })
         .then(resp => resp.json())
         //.then(y => console.log(y))
-        .then(x => dispatch(addItem(x)))
-        
+        .then(x => {
+            dispatch(addItem(x))
+            alert("Successfully added to Cart")
+        })
+        .catch(console.log)
     }
+}
+
+export const deleteItem = item => {
+    console.log(item.props.id)
+    return (dispatch) => {
+        return fetch(`http://localhost:3000/api/v1/cart_items/${item.props.id}`, {
+            credentials: 'include',
+            method:'DELETE'
+        })
+        .then(dispatch(removeItem(item)))
+    }
+
 }

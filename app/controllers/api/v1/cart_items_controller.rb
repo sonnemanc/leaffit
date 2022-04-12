@@ -13,6 +13,8 @@ class Api::V1::CartItemsController < ApplicationController
     end
 
     def destroy
+        item = CartItem.find(params[:id])
+        item.destroy
 
     end
 

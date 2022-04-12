@@ -1,4 +1,4 @@
-
+import {emptyCart} from './myCart.js'
 // synchronous action creators
 export const setCurrentUser = user => {
     return {
@@ -70,8 +70,11 @@ export const logout = () => {
             credentials: 'include',
             method: 'DELETE'
         })
-        .then(dispatch(clearCurrentUser()))
-        .then(dispatch())
+        .then(
+            dispatch(clearCurrentUser()),
+            dispatch(emptyCart())
+            )
+        //.then(dispatch())   I want to clear the cart when logging out
     }
 }
 
