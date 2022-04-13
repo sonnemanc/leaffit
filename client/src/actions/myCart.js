@@ -82,5 +82,4 @@ export const deleteItem = item => {
         })
         .then(dispatch(removeItem(item)))
     }
-
 }

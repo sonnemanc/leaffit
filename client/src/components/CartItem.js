@@ -2,19 +2,24 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { deleteItem } from '../actions/myCart.js'
 
-const CartItem = (item) => {
+const CartItem = (item, plants) => {
 
     const handleClick = (e) => {
-        console.log(`You just cliked Remove`)
+        console.log(`Removing item from Cart`)
         item.deleteItem(item)
+    }
+
+    const handleEdit = e => {
+        console.log(`Editing an item in the Cart`)
     }
     return (
         <div className='CartItem'>
             <ul>
-                <li>{search(item.props.attributes.plant_id, item.plants).attributes.common_name}</li>
+                
+                <li>{item.plants && search(item.props.attributes.plant_id, item.plants).attributes.common_name}</li>
                 <li>Quantity: {item.props.attributes.quantity}</li>
-                <button>Edit</button>
-                <button onClick={function(e) {handleClick(handleClick(e))}}>Remove</button>
+                <button onClick={function(e) {handleEdit(e)}}>Edit</button>
+                <button onClick={function(e) {handleClick(e)}}>Remove</button>
             </ul>
             
         </div>

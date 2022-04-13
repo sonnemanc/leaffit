@@ -26,9 +26,10 @@ class MyCart extends React.Component {
     }
 }
 
-const mapStateToProps = ({ cart }) => {
+const mapStateToProps = ({ cart, plants }) => {
     return {
-        cart
+        cart,
+        plants
     }
 }
 
