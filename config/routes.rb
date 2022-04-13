@@ -9,11 +9,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users do
         resources :carts do 
-          resources :cart_items, only: [:index, :show, :update, :new]
+          resources :cart_items, only: [:index, :show, :new]
         end
       end
       resources :plants, only: [:index]
-      resources :cart_items, only: [:destroy]
+      resources :cart_items, only: [:destroy, :update]
       
     end
   end

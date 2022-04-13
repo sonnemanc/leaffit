@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { deleteItem } from '../actions/myCart.js'
+import EditItem from './EditForm.js'
 
 const CartItem = (item, plants) => {
 
@@ -9,16 +10,31 @@ const CartItem = (item, plants) => {
         item.deleteItem(item)
     }
 
-    const handleEdit = e => {
-        console.log(`Editing an item in the Cart`)
+    let quantity = false;
+
+    const handlePopOut = (e) => {
+        console.log(`You just clicked edit!`)
+        quantity = !quantity;
+        const quantityForm = document.querySelector('.EditItemContainer')
+        if (quantity) {
+            quantityForm.style.display = "block";
+        } else {
+            quantityForm.style.display = "none"
+        }
     }
+
     return (
         <div className='CartItem'>
             <ul>
-                
                 <li>{item.plants && search(item.props.attributes.plant_id, item.plants).attributes.common_name}</li>
-                <li>Quantity: {item.props.attributes.quantity}</li>
-                <button onClick={function(e) {handleEdit(e)}}>Edit</button>
+                <div className='quantity'>
+                    <li>Quantity: {item.props.attributes.quantity}</li>
+                </div>
+                <div className='EditItemContainer' style={{display: 'none'}}>
+                    <EditItem props={item}/>
+                </div>
+                
+                <button onClick={function(e) {handlePopOut(e)}}>Edit</button>
                 <button onClick={function(e) {handleClick(e)}}>Remove</button>
             </ul>
             

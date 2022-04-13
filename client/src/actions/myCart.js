@@ -26,6 +26,13 @@ export const removeItem = item => {
     }
 }
 
+export const editItem = item => {
+    return {
+        type: "EDIT_ITEM",
+        item
+    }
+}
+
 export const updateItem = item => {
     return {
         type: "UPDATE_ITEM",
@@ -73,6 +80,25 @@ export const addCartItem = data => {
     }
 }
 
+export const editCartItem = data => {
+    const plant_id = data.props.id
+    const cart_id = data.currentUser.relationships.cart.data.id
+    const quantity = 1
+    const itemData = {quantity, plant_id, cart_id}
+    console.log(`editCartItem is trying!`)
+    console.log(itemData)
+    return dispatch => {
+        return fetch(`http://localhost:3000/api/v1/cart_items/${data.props.id}`, {
+            credentials: 'include',
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(itemData)
+        })
+        .then(resp => resp.json())
+        .then(console.log)
+    }
+}
+
 export const deleteItem = item => {
     console.log(item.props.id)
     return (dispatch) => {
@@ -81,5 +107,9 @@ export const deleteItem = item => {
             method:'DELETE'
         })
         .then(dispatch(removeItem(item)))
+        //right now the server call works but not the state update
     }
 }
+
+
+

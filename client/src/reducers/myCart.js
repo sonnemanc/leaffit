@@ -7,6 +7,8 @@ export default (state = initialState, action) => {
             return initialState
         case "ADD_PLANT":
             return action.cart.included.concat(action.item)
+        case "EDIT_ITEM":
+            return state.map(item => item.id === action.item.id ? action.item : item)
         default:
             return state
     }
