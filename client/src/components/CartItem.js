@@ -15,7 +15,7 @@ const CartItem = (item, plants) => {
     const handlePopOut = (e) => {
         console.log(`You just clicked edit!`)
         quantity = !quantity;
-        const quantityForm = document.querySelector('.EditItemContainer')
+        const quantityForm = document.querySelector(`.EditItemContainer${item.props.id}`)
         if (quantity) {
             quantityForm.style.display = "block";
         } else {
@@ -30,7 +30,7 @@ const CartItem = (item, plants) => {
                 <div className='quantity'>
                     <li>Quantity: {item.props.attributes.quantity}</li>
                 </div>
-                <div className='EditItemContainer' style={{display: 'none'}}>
+                <div className={`EditItemContainer${item.props.id}`} style={{display: 'none'}}>
                     <EditItem props={item}/>
                 </div>
                 
