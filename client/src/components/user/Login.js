@@ -1,10 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { updateLoginForm } from '../../actions/loginForm.js'
+import { updateLoginForm, resetLoginForm } from '../../actions/loginForm.js'
 import { login } from "../../actions/currentUser.js"
 
             // object destructuring to get props.loginForm
-const Login = ({loginFormData, updateLoginForm, login }) => {
+const Login = ({loginFormData, updateLoginForm, login, resetLoginForm }) => {
     const handleInputChange = event => {
             //This V gives me the name and the value of the event.target dynamically
         const { name, value } = event.target
@@ -19,6 +19,7 @@ const Login = ({loginFormData, updateLoginForm, login }) => {
     const handleSubmit = event => {
         event.preventDefault()
         login(loginFormData)
+        resetLoginForm()
     }
 
     return(
@@ -42,4 +43,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, login } )(Login)
+export default connect(mapStateToProps, { updateLoginForm, resetLoginForm, login } )(Login)
