@@ -33,14 +33,6 @@ export const editItem = item => {
     }
 }
 
-export const updateItem = item => {
-    return {
-        type: "UPDATE_ITEM",
-        item
-    }
-}
-
-
 export const getCart = () => {
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/users/1/carts/1', {
@@ -61,7 +53,6 @@ export const addCartItem = data => {
     const cart_id = data.currentUser.relationships.cart.data.id
     const quantity = 1
     const itemData = {quantity, plant_id, cart_id}
-    //console.log(itemData)
     console.log(`addCartItem is trying!`)
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/cart_items', {
@@ -71,7 +62,6 @@ export const addCartItem = data => {
             body: JSON.stringify(itemData)
         })
         .then(resp => resp.json())
-        //.then(y => console.log(y))
         .then(x => {
             dispatch(addItem(x))
             alert("Successfully added to Cart")
@@ -80,22 +70,26 @@ export const addCartItem = data => {
     }
 }
 
-export const editCartItem = data => {
-    const plant_id = data.props.id
-    const cart_id = data.currentUser.relationships.cart.data.id
-    const quantity = 1
+export const editCartItem = (newQuantity, itemObj) => {
+    const item_id = itemObj.id
+    const cart_id = itemObj.attributes.cart_id
+    const plant_id = itemObj.attributes.plant_id
+    const quantity = newQuantity
     const itemData = {quantity, plant_id, cart_id}
     console.log(`editCartItem is trying!`)
-    console.log(itemData)
+    console.log(item_id)
     return dispatch => {
-        return fetch(`http://localhost:3000/api/v1/cart_items/${data.props.id}`, {
+        return fetch('http://localhost:3000/api/v1/cart_items/' + item_id, {
             credentials: 'include',
-            method: "POST",
+            method: "PATCH",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(itemData)
         })
         .then(resp => resp.json())
-        .then(console.log)
+        .then(x => {
+            console.log(x.data)
+            dispatch(editItem(x.data))
+        })
     }
 }
 
@@ -106,8 +100,10 @@ export const deleteItem = item => {
             credentials: 'include',
             method:'DELETE'
         })
-        .then(dispatch(removeItem(item)))
-        //right now the server call works but not the state update
+        .then(
+            console.log(item),
+            dispatch(removeItem(item.props))
+            )
     }
 }
 

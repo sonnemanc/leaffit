@@ -9,7 +9,11 @@ class Api::V1::CartItemsController < ApplicationController
     end
 
     def update
-
+        @item = CartItem.find(params[:id])
+        @user = User.find_by(id: session[:user_id])
+        user_cart = @user.cart
+        @item.update(cart_item_params)
+        render json: CartItemSerializer.new(@item)
     end
 
     def destroy

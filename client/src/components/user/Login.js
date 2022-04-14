@@ -2,9 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { updateLoginForm, resetLoginForm } from '../../actions/loginForm.js'
 import { login } from "../../actions/currentUser.js"
+import { getCart } from '../../actions/myCart.js'
 
             // object destructuring to get props.loginForm
-const Login = ({loginFormData, updateLoginForm, login, resetLoginForm }) => {
+const Login = ({loginFormData, updateLoginForm, login, resetLoginForm, getCart }) => {
     const handleInputChange = event => {
             //This V gives me the name and the value of the event.target dynamically
         const { name, value } = event.target
@@ -43,4 +44,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, { updateLoginForm, resetLoginForm, login } )(Login)
+export default connect(mapStateToProps, { updateLoginForm, resetLoginForm, login, getCart } )(Login)

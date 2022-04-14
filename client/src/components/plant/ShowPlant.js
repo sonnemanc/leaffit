@@ -5,7 +5,7 @@ import { addCartItem } from '../../actions/myCart.js'
 const ShowPlant = (plant, currentUser) => {
 
   const handleClick = (event) => {
-    console.log(`I was Clicked`)
+    console.log(plant)
     plant.addCartItem(plant)
     }
 

@@ -7,12 +7,9 @@ import { getCart } from './actions/myCart.js'
 import Navbar from './components/NavBar.js'
 import Login from './components/user/Login.js'
 import Home from './components/Home.js'
-import Logout from './components/user/Logout.js'
 import MyCart from './components/MyCart.js'
 import PlantList from './components/plant/PlantList.js'
 import '../src/App.css'
-
-import MainContainer from './components/MainContainer.js'
 
 class App extends React.Component {
 
@@ -22,12 +19,10 @@ class App extends React.Component {
     this.props.getCart()
   }
 
-  componentDidUpdate() {
-    this.props.getCurrentUser()
-    this.props.getCart()
-  }
-
-  //Need a component did update, when log in fails cart and plants don't fill?
+  //componentDidUpdate() {
+  //  this.props.getCurrentUser()
+  //  this.props.getCart()
+  //}
 
   render() {
     return (

@@ -1,4 +1,4 @@
-import {emptyCart} from './myCart.js'
+import {emptyCart, getCart} from './myCart.js'
 // synchronous action creators
 export const setCurrentUser = user => {
     return {
@@ -41,7 +41,7 @@ export const login = credentials => {
 }
 
 export const getCurrentUser = () => {
-    return dispatch => {
+    return (dispatch) => {
         return fetch('http://localhost:3000/api/v1/get_current_user', {
             credentials: 'include',
             method: "GET",
