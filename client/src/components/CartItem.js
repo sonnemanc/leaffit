@@ -6,14 +6,14 @@ import EditItem from './EditForm.js'
 const CartItem = (item, plants) => {
 
     const handleClick = (e) => {
-        console.log(`Removing item from Cart`)
+        //console.log(`Removing item from Cart`)
         item.deleteItem(item)
     }
 
     let quantity = false;
 
     const handlePopOut = (e) => {
-        console.log(`You just clicked edit!`)
+        //console.log(`You just clicked edit!`)
         quantity = !quantity;
         const quantityForm = document.querySelector(`.EditItemContainer${item.props.id}`)
         if (quantity) {
@@ -26,7 +26,8 @@ const CartItem = (item, plants) => {
     return (
         <div className='CartItem'>
             <ul>
-                <li>{item.plants && search(item.props.attributes.plant_id, item.plants).attributes.common_name}</li>
+                {console.log(item)}
+                <li>{item.plants && search(item.props.id, item.plants).attributes.common_name}</li>
                 <div className='quantity'>
                     <li>Quantity: {item.props.attributes.quantity}</li>
                 </div>

@@ -5,7 +5,7 @@ class Api::V1::CartItemsController < ApplicationController
         user_cart = @user.cart
         item = CartItem.new(cart_item_params)
         item.save
-        render json: CartSerializer.new(user_cart, include: [:cart_items])
+        render json: CartItemSerializer.new(item)
     end
 
     def update

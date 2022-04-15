@@ -15,7 +15,6 @@ export const addItem = item => {
     return {
         type: "ADD_PLANT",
         item
-
     }
 }
 
@@ -53,7 +52,7 @@ export const addCartItem = data => {
     const cart_id = data.currentUser.relationships.cart.data.id
     const quantity = 1
     const itemData = {quantity, plant_id, cart_id}
-    console.log(`addCartItem is trying!`)
+    //console.log(`addCartItem is trying!`)
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/cart_items', {
             credentials: 'include',
@@ -62,7 +61,9 @@ export const addCartItem = data => {
             body: JSON.stringify(itemData)
         })
         .then(resp => resp.json())
+        .then(y => y.data)
         .then(x => {
+            //console.log(x)
             dispatch(addItem(x))
             alert("Successfully added to Cart")
         })
@@ -76,8 +77,8 @@ export const editCartItem = (newQuantity, itemObj) => {
     const plant_id = itemObj.attributes.plant_id
     const quantity = newQuantity
     const itemData = {quantity, plant_id, cart_id}
-    console.log(`editCartItem is trying!`)
-    console.log(item_id)
+    //console.log(`editCartItem is trying!`)
+    //console.log(item_id)
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/cart_items/' + item_id, {
             credentials: 'include',
@@ -87,7 +88,7 @@ export const editCartItem = (newQuantity, itemObj) => {
         })
         .then(resp => resp.json())
         .then(x => {
-            console.log(x.data)
+            //console.log(x.data)
             dispatch(editItem(x.data))
         })
     }
@@ -101,11 +102,8 @@ export const deleteItem = item => {
             method:'DELETE'
         })
         .then(
-            console.log(item),
+            //console.log(item),
             dispatch(removeItem(item.props))
             )
     }
 }
-
-
-

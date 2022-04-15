@@ -5,9 +5,9 @@ import { addCartItem } from '../../actions/myCart.js'
 const ShowPlant = (plant, currentUser) => {
 
   const handleClick = (event) => {
-    console.log(plant)
+    //console.log(props)
     plant.addCartItem(plant)
-    }
+  }
 
 
   return (

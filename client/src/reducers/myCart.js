@@ -6,7 +6,7 @@ export default (state = initialState, action) => {
         case "CLEAR_CART":
             return initialState
         case "ADD_PLANT":
-            return action.cart.included.concat(action.item)
+            return state.concat([action.item])
         case "EDIT_ITEM":
             return state.map(item => item.id === action.item.id ? action.item : item)
         case "REMOVE_ITEM":
