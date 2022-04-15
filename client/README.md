@@ -1,3 +1,17 @@
+Welcome to Leaf-Fit! 
+
+This was a fun project that showcases house-plants in a fun
+storefront.  Use the chart on the homepage to help you decide what zone you are looking for, and when you find a plant you like you can add it to your cart.
+
+Once a plant is in your cart you can edit the quanitity you would like to order, or you can remove it from your cart.  All changes are saved into the Redux library, as well as 
+the Rails API that forms the backend of this application.
+
+I hope you enjoy!
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
