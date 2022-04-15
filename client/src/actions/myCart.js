@@ -52,7 +52,7 @@ export const addCartItem = data => {
     const cart_id = data.currentUser.relationships.cart.data.id
     const quantity = 1
     const itemData = {quantity, plant_id, cart_id}
-    //console.log(`addCartItem is trying!`)
+    //console.log(cart_id)
     return dispatch => {
         return fetch('http://localhost:3000/api/v1/cart_items', {
             credentials: 'include',

@@ -20,7 +20,6 @@ class MyCart extends React.Component {
               <p>Shipping and Handling: </p>
               <p>Total :</p>
               <button>CheckOut</button>
-              <button>Empty Cart</button>
              </div>
         )
     }

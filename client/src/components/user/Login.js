@@ -26,7 +26,7 @@ const Login = ({loginFormData, updateLoginForm, login, resetLoginForm, getCart }
     return(
         <form onSubmit={handleSubmit}>
             <input placeholder="username:" value={loginFormData.username} name="username" type="text" onChange={handleInputChange}/>
-            <input placeholder="password:" value={loginFormData.password} name="password" type="text" onChange={handleInputChange}/>
+            <input placeholder="password:" value={loginFormData.password} name="password" type="password" onChange={handleInputChange}/>
             <input type="submit" value="Log In"/>
         </form>
     )

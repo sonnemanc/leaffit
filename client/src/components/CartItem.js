@@ -26,7 +26,6 @@ const CartItem = (item, plants) => {
     return (
         <div className='CartItem'>
             <ul>
-                {console.log(item)}
                 <li>{item.plants && search(item.props.id, item.plants).attributes.common_name}</li>
                 <div className='quantity'>
                     <li>Quantity: {item.props.attributes.quantity}</li>
