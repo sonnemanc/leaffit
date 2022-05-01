@@ -27,7 +27,7 @@ plants = {
         :light_level => [2,3],
         :flower_color => '',
         :water_needs => 1,
-        :description => 'Pothos (also called Devil’s Ivy) is a tropical vine with shiny, heart-shaped leaves that often have gold, white, or yellow variegation.',
+        :description => 'Pothos (also called Devils Ivy) is a tropical vine with shiny, heart-shaped leaves that often have gold, white, or yellow variegation.',
         :special_notes => 'Native to tropical French Polynesian islands in the South Pacific, pothos can now be found throughout the world as an attractive, easy-to-care-for houseplant. Its vining nature makes it a great choice for use in hanging baskets, draped across shelves, or climbing up a wall. Pothos is mildly toxic so use caution around curious pets/children.',
       },
       
@@ -107,8 +107,7 @@ plants = {
         :light_level => [2],
         :flower_color => 'White',
         :water_needs => 2,
-        :description => "
-      Monstera are species of evergreen tropical vines and shrubs that are native to Central America. They are famous for their natural leaf-holes, which has led to the rise of their nickname, Swiss Cheese Plant. The Monstera's leaf-holes are called fenestrations and are theorized to maximize sun fleck capture on the forest floor by increasing the spread of the leaf while decreasing the mass of leaf cells to support.",
+        :description => "Monstera are species of evergreen tropical vines and shrubs that are native to Central America. They are famous for their natural leaf-holes, which has led to the rise of their nickname, Swiss Cheese Plant. The Monstera's leaf-holes are called fenestrations and are theorized to maximize sun fleck capture on the forest floor by increasing the spread of the leaf while decreasing the mass of leaf cells to support.",
         :special_notes => "Two different species of Monstera are cultivated as houseplants - Monstera deliciosa and Monstera adansonii. Monstera adansonii is distinguished from M. deliciosa by having longer, tapering leaves, as well as having completely enclosed leaf holes. Monstera deliciosa leaf holes eventually grow towards the edge and open up as they mature.",
       },
       
@@ -138,7 +137,7 @@ plants = {
         :light_level => [1,2],
         :flower_color => '',
         :water_needs => 2,
-        :description => 'Ficus lyrata, commonly known as the fiddle-leaf fig, is a species of flowering plant in the mulberry and fig family Moraceae. It is native to western Africa, from Cameroon west to Sierra Leone, where it grows in lowland tropical rainforest. It can grow up to 12–15 m tall.',
+        :description => 'Ficus lyrata, commonly known as the fiddle-leaf fig, is a species of flowering plant in the mulberry and fig family Moraceae. It is native to western Africa, from Cameroon west to Sierra Leone, where it grows in lowland tropical rainforest. It can grow up to 15 m tall.',
         :special_notes => 'The fiddle leaf can make for a wonderful house plant, adding a bold statement or brightening up any dull corner in your home. Take note though that the fiddle leaf fig may be finicky and take some time to adapt when placed in a new environment.',
       },
       
@@ -189,9 +188,7 @@ plants = {
         :flower_color => '',
         :water_needs => 2,
         :description => 'Pilea peperomioides is an erect, evergreen perennial plant, with shiny, dark green, circular leaves up to 10 cm (4 in) in diameter on long petioles. The leaves are described as peltate—circular, with the petiole attached near the centre. The plant is completely hairless.',
-        :special_notes => 'As legend has it, in 1946 the Norwegian missionary Agnar Espergren brought the plant back home from China and shared cuttings among his friends.
-      
-      Read more at Gardening Know How: Chinese Money Plant Info: Learn How To Grow A Pilea Plant https://www.gardeningknowhow.com/houseplants/pilea-plants/pilea-chinese-money-plant-info.htm',
+        :special_notes => 'As legend has it, in 1946 the Norwegian missionary Agnar Espergren brought the plant back home from China and shared cuttings among his friends.',
       },
       
       'Jade Plant' => {
